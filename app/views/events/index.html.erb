@@ -3,3 +3,17 @@
 <%= link_to "Please Log/Sign in to start!", login_path %>
 
 
+  <h2> Current Events! </h2>
+  <%# <%= binding.pry %1> %>
+
+  <% @events.each do |event| %>
+    <div>
+    <%= @users.find_by(event.user_id).name %>
+    <%= link_to event.title, event_path(event) %>
+    <%= event.date %>
+    <%= event.time %>
+    <%= event.location %>
+    <%= event.description %>
+  </div>
+<% end %>
+

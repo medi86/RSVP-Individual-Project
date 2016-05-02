@@ -5,3 +5,15 @@
 <%# <% end %1> %>
 
 <%= link_to "Let's make a new event!", new_event_path  %>
+
+<%# <%= binding.pry %1> %>
+<% @user.events.each do |event| %>
+  <div>
+    <%= event.title %>
+    <%= event.date %>
+    <%= event.time %>
+    <%= event.location %>
+    <%= link_to "Edit", edit_event_path %>
+    <%= link_to "Delete", event_path , method: 'delete' %>
+  </div>
+<% end %>
