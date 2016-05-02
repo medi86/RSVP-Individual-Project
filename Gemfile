@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'twitter'
+gem 'dotenv-rails'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -35,6 +40,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'capybara'
+  gem 'pry'
+  gem 'better_errors'
+  gem 'mrspec'
 end
 
 group :development do
