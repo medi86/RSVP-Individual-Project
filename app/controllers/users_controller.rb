@@ -5,7 +5,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(name: params[:user]["name"], email: params[:user]["email"], password: params[:user]["password"] )
-    flash[:success] = "Welcome ^______^"
-    redirect_to root_path
-    end
+    redirect_to user_path @user
+
+    require "pry"
+    binding.pry
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end
 end

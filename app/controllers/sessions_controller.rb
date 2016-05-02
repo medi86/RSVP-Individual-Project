@@ -4,7 +4,10 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
-    redirect_to root_path
+    if user
+      log_in user
+      redirect_to user_path user
+    end
   end
 
   def destroy

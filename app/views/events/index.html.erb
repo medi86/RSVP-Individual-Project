@@ -2,26 +2,4 @@
 
 <%= link_to "Please Log/Sign in to start!", login_path %>
 
-<% if current_user %>
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <%= form_for(@event) do |f| %>
-
-        <%= f.label :title  %>
-        <%= f.text_field :title, class: 'form-control'  %>
-
-        <%= f.label :date %>
-        <%= f.date_field :date, class: 'form-control' %>
-
-        <%= f.label :time %>
-        <%= f.time_field :time, class: 'form-control' %>
-
-        <%= f.label :location %>
-        <%= f.text_field :location, class: 'form-control' %>
-
-        <%= f.submit "Create your event!", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
-<% end %>
 
