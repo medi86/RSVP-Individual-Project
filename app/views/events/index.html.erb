@@ -1,6 +1,8 @@
 <h1>Planning an event?</h1>
 
-<% if current_user? %>
+<%= link_to "Please Log/Sign in to start!", login_path %>
+
+<% if current_user %>
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <%= form_for(@event) do |f| %>

@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   # patch "/events/:id", to: "events#update"
   # put "/events/:id", to: "events#update"
   # delete "/events/:id", to: "events#destroy"
+  resources :users
+
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
 
 end
 
