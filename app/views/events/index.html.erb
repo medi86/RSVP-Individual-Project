@@ -1,19 +1,41 @@
 <h1>Planning an event?</h1>
+<br>
+<h1><%= link_to "Please Login or Sign in to start!", login_path %></h1>
+<br>
 
-<%= link_to "Please Log/Sign in to start!", login_path %>
 
-
-  <h2> Current Events! </h2>
+  <h1> Current Events! </h1>
+  <br>
   <%# <%= binding.pry %1> %>
-
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
   <% @events.each do |event| %>
     <div>
-    <%= @users.find_by(event.user_id).name %>
-    <%= link_to event.title, event_path(event) %>
-    <%= event.date %>
-    <%= event.time %>
-    <%= event.location %>
-    <%= event.description %>
-  </div>
+   HOST:  <%= @users.find_by(id: event.user_id).name %>
+  <br>
+   TITLE:  <%= link_to event.title, event_path(event) %>
+  <br>
+   DATE:  <%= event.date %>
+  <br>
+   TIME:  <%= event.time %>
+  <br>
+   LOCATION:  <%= event.location %>
+  <br>
+   DESCRIPTION:  <%= event.description %>
+<br>
+   ATTENDEE:  <%= event.attendee %>
+<br>
+<br>
+<%= form_for(event) do |f| %>
+  <%= f.label :put_your_name_here %>
+  <%= f.text_field :attendee, class: 'form-control' %>
+
+  <%= f.submit "Join this EVENT!", class: "btn btn-primary" %>
 <% end %>
+<br>
+
+</div>
+<% end %>
+</div>
+</div>
 

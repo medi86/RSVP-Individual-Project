@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(name: params[:user]["name"], email: params[:user]["email"], password: params[:user]["password"] )
+    log_in @user
     redirect_to user_path @user
   end
 

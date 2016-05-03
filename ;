@@ -1,6 +1,0 @@
-<h1>Planning an event?</h1>
-
-<%= link_to "Please Log/Sign in to start!", login_path %>
-
-
-

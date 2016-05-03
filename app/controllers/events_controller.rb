@@ -15,7 +15,7 @@ class EventsController < ApplicationController
 
   def create
     @user = current_user
-    @event = current_user.events.create(title: params[:event][:title], date: params[:event][:date], time: params[:event][:time], location: params[:event][:location])
+    @event = current_user.events.create(title: params[:event][:title], date: params[:event][:date], time: params[:event][:time], location: params[:event][:location], description: params[:event][:description])
     redirect_to user_path @user
   end
 
@@ -26,7 +26,7 @@ class EventsController < ApplicationController
   def update
     @user = current_user
     event = current_user.events.find_by(params[:id])
-    event.update(title: params[:event][:title], date: params[:event][:date], time: params[:event][:time], location: params[:event][:location])
+    event.update(title: params[:event][:title], date: params[:event][:date], time: params[:event][:time], location: params[:event][:location],description: params[:event][:description])
     redirect_to user_path @user
   end
 
